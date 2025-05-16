@@ -5,6 +5,6 @@ const { applicationForJobApply } = require('../controllers/application-controlle
 const upload = require('../middleware/upload-middleware');
 
 
-router.post('/apply', authorize('seeker'), upload.single('resume'), applicationForJobApply);
+router.post('/apply', authMiddleware, authorize('seeker'), upload.single('resume'), applicationForJobApply);
 
 module.exports = router;
