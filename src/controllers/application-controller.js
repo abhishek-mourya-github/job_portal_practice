@@ -1,5 +1,5 @@
 const Application = require("../models/Application-model");
-const { uploadToCloudinary } = require("../helpers/cloudinaryHelper");
+const uploadToCloudinary  = require("../helper/cloudinaryHelper");
 const fs = require('fs');
 
 const applicationForJobApply = async (req, res) => {
