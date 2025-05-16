@@ -15,6 +15,10 @@ connectToDB();
 // middleware
 app.use(express.json());
 
+app.get('/', () => {
+    console.log("welcome to our job portal");
+})
+
 // connect all the routes
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
