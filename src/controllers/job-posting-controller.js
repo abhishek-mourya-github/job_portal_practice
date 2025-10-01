@@ -29,8 +29,10 @@ const jobPosting = async (req, res) => {
       .replace(/\s+/g, "-")
       .replace(/[^\w-]+/g, "");
 
+    const jobDetection = await Job.findOne({ uniqueIdentifier })
+
     // Check for duplicates
-    if (await Job.findOne({ uniqueIdentifier })) {
+    if (jobDetection) {
       return res.status(400).json({
         success: false,
         message: "Duplicate job detected",
